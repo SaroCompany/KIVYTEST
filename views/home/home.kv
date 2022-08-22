@@ -1,0 +1,30 @@
+#:kivy 2.1.0
+
+<Home>:
+    orientation: "vertical"
+    Label:
+        size_hint_y: .1
+        text: "Other"
+    Button:
+        size_hint_y: .1
+        text: "popup"
+        on_press: root.open_popup()
+    BoxLayout:
+        size_hint_y: .8
+        id: home_box
+
+<SomePopup>:
+    title: "SOME TITLE"
+    title_align: "center"
+    title_color: app.colors.primary
+    size_hint: .25, .8
+    size_hint_min_x: dp(200)
+    pos_hint: {"x": .1, "top": .9}
+    BoxLayout:
+        orientation: "vertical"
+        padding: [dp(0), dp(12), dp(0), dp(12)]
+        Label:
+            text: "Some text"
+        Button:
+            text: "create buttons on box"
+            on_press: root.modify_home_box()
